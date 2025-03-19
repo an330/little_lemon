@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.compose.material.MaterialTheme
 import androidx.compose.ui.draw.clip
+import com.example.littlelemon.ui.theme.LittleLemonColor
 
 
 @Composable
@@ -61,7 +62,9 @@ fun MenuDish(navController: NavHostController? = null, dish: Dish) {
             Column {
                 Image(
                     modifier = Modifier.clip(RoundedCornerShape(10.dp)),
-                    painter = painterResource(id = dish.imageResource),
+                    bitmap = scaledBitmapDrawable(resId = dish.imageResource),
+                   // painter = painterResource(id = dish.imageResource),
+
                     contentDescription = "Dish Image"
                 )
 
@@ -84,5 +87,6 @@ fun MenuDish(navController: NavHostController? = null, dish: Dish) {
     Divider(
         modifier = Modifier.padding(start = 8.dp, end = 8.dp),
         thickness = 1.dp,
+        color = LittleLemonColor.yellow
     )
 }

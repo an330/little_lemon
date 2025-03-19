@@ -22,7 +22,8 @@ fun DishDetails(id: Int) {
     val dish = requireNotNull(DishRepository.getDish(id))
 
     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        TopAppBar(title = { Text(text = "Dish Details") })
+        TopAppBar()
+
 
         Image(
             painter = painterResource(dish.imageResource),
